@@ -6,7 +6,7 @@ defmodule RestaurantPlatform.Repo.Migrations.CreateAccounts do
       add :id, :binary_id, primary_key: true
       add :name, :string
       add :email, :string
-      add :subscribed_at, :utc_datetime
+      add :subcribed_at, :utc_datetime
       add :salt, :string
       add :hash_password, :string
 

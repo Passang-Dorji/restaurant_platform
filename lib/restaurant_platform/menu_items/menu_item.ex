@@ -16,7 +16,7 @@ defmodule RestaurantPlatform.MenuItems.MenuItem do
   @doc false
   def changeset(menu_item, attrs) do
     menu_item
-    |> cast(attrs, [:item_name, :item_description, :price, :dish_photo_link])
-    |> validate_required([:item_name, :item_description, :price, :dish_photo_link])
+    |> cast(attrs, [:item_name, :item_description, :price, :dish_photo_link, :restaurant_id])
+    |> validate_required([:item_name, :item_description, :price, :dish_photo_link, :restaurant_id])
   end
 end

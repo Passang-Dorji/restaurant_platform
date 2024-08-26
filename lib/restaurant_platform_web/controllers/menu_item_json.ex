@@ -21,7 +21,8 @@ defmodule RestaurantPlatformWeb.MenuItemJSON do
       item_name: menu_item.item_name,
       item_description: menu_item.item_description,
       price: menu_item.price,
-      dish_photo_link: menu_item.dish_photo_link
+      dish_photo_link: menu_item.dish_photo_link,
+      restaurant_id: menu_item.restaurant_id
     }
   end
 end

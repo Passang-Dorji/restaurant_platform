@@ -6,6 +6,11 @@ defmodule RestaurantPlatformWeb.MenuItemController do
 
   action_fallback RestaurantPlatformWeb.FallbackController
 
+
+  def index(conn, %{"restaurant_id" => restaurant_id}) do
+    menu_items = MenuItems.get_menu_item_by_restaurant_id(restaurant_id)
+    render(conn, :index, menu_items: menu_items)
+  end
   def index(conn, _params) do
     menu_items = MenuItems.list_menu_items()
     render(conn, :index, menu_items: menu_items)

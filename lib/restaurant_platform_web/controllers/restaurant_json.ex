@@ -20,7 +20,8 @@ defmodule RestaurantPlatformWeb.RestaurantJSON do
       id: restaurant.id,
       name: restaurant.name,
       address: restaurant.address,
-      contact: restaurant.contact
+      contact: restaurant.contact,
+      account_id: restaurant.account_id
     }
   end
 end

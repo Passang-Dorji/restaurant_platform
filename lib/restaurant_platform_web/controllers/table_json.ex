@@ -18,7 +18,8 @@ defmodule RestaurantPlatformWeb.TableJSON do
   defp data(%Table{} = table) do
     %{
       id: table.id,
-      table_no: table.table_no
+      table_no: table.table_no,
+      restaurant_id: table.restaurant_id
     }
   end
 end

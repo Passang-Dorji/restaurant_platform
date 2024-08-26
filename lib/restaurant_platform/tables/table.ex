@@ -13,7 +13,7 @@ defmodule RestaurantPlatform.Tables.Table do
   @doc false
   def changeset(table, attrs) do
     table
-    |> cast(attrs, [:table_no])
-    |> validate_required([:table_no])
+    |> cast(attrs, [:table_no, :restaurant_id])
+    |> validate_required([:table_no, :restaurant_id])
   end
 end

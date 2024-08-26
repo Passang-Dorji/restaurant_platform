@@ -35,6 +35,13 @@ defmodule RestaurantPlatform.MenuItems do
       ** (Ecto.NoResultsError)
 
   """
+  def get_menu_item_by_restaurant_id(restaurant_id) do
+    query = from(m in MenuItem,
+      where: m.restaurant_id == ^restaurant_id
+    )
+    Repo.all(query)
+  end
+
   def get_menu_item!(id), do: Repo.get!(MenuItem, id)
 
   @doc """

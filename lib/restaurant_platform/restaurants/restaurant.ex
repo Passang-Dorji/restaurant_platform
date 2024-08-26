@@ -17,7 +17,7 @@ defmodule RestaurantPlatform.Restaurants.Restaurant do
   @doc false
   def changeset(restaurant, attrs) do
     restaurant
-    |> cast(attrs, [:name, :address, :contact])
-    |> validate_required([:name, :address, :contact])
+    |> cast(attrs, [:name, :address, :contact, :account_id])
+    |> validate_required([:name, :address, :contact, :account_id])
   end
 end
