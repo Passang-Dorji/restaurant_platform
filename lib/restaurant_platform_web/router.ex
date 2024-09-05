@@ -11,6 +11,11 @@ defmodule RestaurantPlatformWeb.Router do
     resources "/restaurants", RestaurantController, except: [:new, :edit]
     resources "/tables", TableController, except: [:new, :edit]
     resources "/menu_items", MenuItemController, except: [:new, :edit]
+    post "/signup", AccountController, :signup
+    post "/login", AccountController, :login
+    resources "/sessions", SessionController, except: [:new, :edit]
+    resources "/orders", OrderController, except: [:new, :edit]
+    resources "/order_lists", Order_listController, except: [:new, :edit]
    end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development

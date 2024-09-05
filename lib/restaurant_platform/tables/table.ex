@@ -7,6 +7,7 @@ defmodule RestaurantPlatform.Tables.Table do
   schema "tables" do
     field :table_no, :string
     belongs_to :restaurant, RestaurantPlatform.Restaurants.Restaurant, foreign_key: :restaurant_id, references: :id
+    has_many :sessions, RestaurantPlatform.Sessions.Session
     timestamps(type: :utc_datetime)
   end
 
