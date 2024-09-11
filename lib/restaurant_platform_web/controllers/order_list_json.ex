@@ -19,7 +19,9 @@ defmodule RestaurantPlatformWeb.Order_listJSON do
     %{
       id: order_list.id,
       quantity: order_list.quantity,
-      total_prices: order_list.total_prices
+      total_prices: order_list.total_prices,
+      item_name: order_list.menu_item.item_name,
+      price: order_list.menu_item.price
     }
   end
 end

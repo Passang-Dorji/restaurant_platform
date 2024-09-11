@@ -6,8 +6,9 @@ defmodule RestaurantPlatformWeb.Order_listController do
 
   action_fallback RestaurantPlatformWeb.FallbackController
 
-  def index(conn, _params) do
-    order_lists = Order_lists.list_order_lists()
+  def index(conn, params) do
+    order_id = params["order_id"]
+    order_lists = Order_lists.list_order_lists(order_id)
     render(conn, :index, order_lists: order_lists)
   end
 

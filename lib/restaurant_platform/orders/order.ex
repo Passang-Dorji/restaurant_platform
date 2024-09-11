@@ -9,6 +9,7 @@ defmodule RestaurantPlatform.Orders.Order do
     field :payed_at, :utc_datetime
     field :total_amount, :decimal
     belongs_to :session, RestaurantPlatform.Sessions.Session, foreign_key: :session_id, references: :id
+    has_many :order_lists, RestaurantPlatform.Order_lists.Order_list
     timestamps(type: :utc_datetime)
   end
 

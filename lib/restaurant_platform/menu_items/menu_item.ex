@@ -10,6 +10,7 @@ defmodule RestaurantPlatform.MenuItems.MenuItem do
     field :price, :decimal
     field :dish_photo_link, :string
     belongs_to :restaurant, RestaurantPlatform.Restaurants.Restaurant, foreign_key: :restaurant_id, references: :id
+    has_many :order_lists, RestaurantPlatform.Order_lists.Order_list
     timestamps(type: :utc_datetime)
   end
 

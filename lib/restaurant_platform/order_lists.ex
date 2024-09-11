@@ -17,8 +17,12 @@ defmodule RestaurantPlatform.Order_lists do
       [%Order_list{}, ...]
 
   """
-  def list_order_lists do
-    Repo.all(Order_list)
+  def list_order_lists(order_id) do
+    Order_list
+    |> where([ol], ol.order_id == ^order_id)
+    |> Repo.all()
+    |> Repo.preload(:menu_item)
+    |> IO.inspect(label: "Order_list with preloaded  menu_items:")
   end
 
   @doc """
