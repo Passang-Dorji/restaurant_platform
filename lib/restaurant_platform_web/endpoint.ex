@@ -39,7 +39,11 @@ defmodule RestaurantPlatformWeb.Endpoint do
   plug Plug.RequestId
   plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
-  plug CORSPlug
+  plug CORSPlug,
+  origin: System.get_env("BASE_URL") || "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  headers: ["ngrok-skip-browser-warning", "authorization", "content-type", "accept"]
+
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],

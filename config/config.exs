@@ -13,7 +13,7 @@ config :restaurant_platform,
 
 # Configures the endpoint
 config :restaurant_platform, RestaurantPlatformWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: System.get_env("API_URL")],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
     formats: [json: RestaurantPlatformWeb.ErrorJSON],

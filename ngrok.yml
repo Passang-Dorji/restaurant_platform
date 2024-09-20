@@ -1,0 +1,9 @@
+version: "3"
+authtoken: 2mHSwsxtyXNYZVPUzkrPDizDSpT_675SeyTQjG32UqL8wFf2s
+tunnels:
+  first-service:
+    addr: 3000
+    proto: http
+  second-service:
+    addr: 4000
+    proto: http

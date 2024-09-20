@@ -19,6 +19,6 @@ defmodule RestaurantPlatform.Orders.Order do
     order
     |> cast(attrs, [:payed_at, :total_amount, :session_id])
     |> put_change(:ordered_at, now)
-    |> validate_required([:total_amount, :session_id]) #:payed_at
+    |> validate_required([:total_amount, :session_id])
   end
 end

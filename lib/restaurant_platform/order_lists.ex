@@ -22,7 +22,6 @@ defmodule RestaurantPlatform.Order_lists do
     |> where([ol], ol.order_id == ^order_id)
     |> Repo.all()
     |> Repo.preload(:menu_item)
-    |> IO.inspect(label: "Order_list with preloaded  menu_items:")
   end
 
   @doc """

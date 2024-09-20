@@ -18,7 +18,10 @@ defmodule RestaurantPlatform.Orders do
 
   """
   def list_orders do
-    Repo.all(Order)
+    Order
+    |> where([o], is_nil(o.payed_at))
+    |> Repo.all()
+    |> Repo.preload([ session: :table])
   end
 
   @doc """
@@ -76,7 +79,7 @@ defmodule RestaurantPlatform.Orders do
         order_list_changeset = Order_list.changeset(%Order_list{}, order_list_attrs)
         Repo.insert!(order_list_changeset)
       end)
-      order
+      Repo.preload(order, [session: :table])
     end)
   end
   @doc """
